@@ -31,7 +31,7 @@ class LibZMQRecipe(Recipe):
             bash = sh.Command('sh')
             shprint(
                 bash, './configure',
-                '--host=' + arch.command_prefix,
+                '--host={}'.format(arch.command_prefix),
                 '--without-documentation',
                 '--prefix={}'.format(prefix),
                 '--with-libsodium=no',
@@ -73,7 +73,11 @@ class LibZMQRecipe(Recipe):
         env['LDFLAGS'] += ' -L{}/sources/cxx-stl/gnu-libstdc++/{}/libs/{}'.format(
             self.ctx.ndk_dir, self.ctx.toolchain_version, arch)
         env['CXXFLAGS'] += ' --sysroot={}/platforms/android-{}/arch-arm'.format(
+<<<<<<< HEAD
             self.ctx.ndk_dir,self.ctx.ndk_api)
+=======
+            self.ctx.ndk_dir, self.ctx.ndk_api)
+>>>>>>> upstream/master
         return env
 
 
