@@ -9,8 +9,9 @@ from multiprocessing import cpu_count
 
 
 class GRPCRecipe(NDKRecipe):
+    name = 'protobuf_cpp'
     version = 'v1.20.1'
-    url = 'https://github.com/grpc/grpc/archive/{}.zip'
+    url = 'https://github.com/grpc/grpc/archive/{version}.zip'
     generated_libraries = [
         'libaddress_sorting.a',
         'libbenchmark.a',
